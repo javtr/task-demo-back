@@ -6,7 +6,7 @@ import java.util.Set;
 
 
 @Entity
-public class User {
+public class UserModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,7 +17,7 @@ public class User {
     private String email;
     private String password;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "userModel")
     private Set<Task> tasks;
 
     @ManyToOne
@@ -25,19 +25,32 @@ public class User {
     private Rol rol;
 
 
-    public User() {
+    public UserModel() {
     }
 
-    public User(Integer id) {
+    public UserModel(Integer id) {
         this.id = id;
     }
 
-    public User(String name, String last_name, String email, String password, Rol rol) {
+    public UserModel(String name, String last_name, String email, String password, Rol rol) {
         this.email = email;
         this.last_name = last_name;
         this.name = name;
         this.password = password;
         this.rol = rol;
+    }
+
+    public UserModel(String email, String password, Rol rol) {
+        this.email = email;
+        this.password = password;
+        this.rol = rol;
+    }
+
+    public UserModel(String name, String last_name, String email, String password) {
+        this.name = name;
+        this.last_name = last_name;
+        this.email = email;
+        this.password = password;
     }
 
     public Integer getId() {

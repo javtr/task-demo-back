@@ -1,10 +1,10 @@
 package com.example.taskdemo.repository;
 
-import com.example.taskdemo.model.User;
+import com.example.taskdemo.model.UserModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRepository extends JpaRepository<User,Integer> {
-
+public interface UserRepository extends JpaRepository<UserModel,Integer> {
+    UserModel findByEmail(String email);
 
 }
 

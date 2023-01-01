@@ -15,22 +15,22 @@ public class Rol {
     private String rol;
 
     @OneToMany(mappedBy = "rol")
-    private Set<User> users;
+    private Set<UserModel> userModels;
 
 
 
     public Rol() {
     }
 
-    public Rol(String rol, Set<User> users) {
+    public Rol(String rol, Set<UserModel> userModels) {
         this.rol = rol;
-        this.users = users;
+        this.userModels = userModels;
     }
 
-    public Rol(Integer id, String rol, Set<User> users) {
+    public Rol(Integer id, String rol, Set<UserModel> userModels) {
         this.id = id;
         this.rol = rol;
-        this.users = users;
+        this.userModels = userModels;
     }
 
     public Rol(Integer id) {
@@ -41,12 +41,12 @@ public class Rol {
         return id;
     }
 
-    public Set<User> getUsers() {
-        return users;
+    public Set<UserModel> getUsers() {
+        return userModels;
     }
 
-    public void setUsers(Set<User> users) {
-        this.users = users;
+    public void setUsers(Set<UserModel> userModels) {
+        this.userModels = userModels;
     }
 
     public void setId(Integer id) {
